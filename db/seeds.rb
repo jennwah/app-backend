@@ -9,3 +9,7 @@
 Book.create(title: 'Star Wars', description: 'A movie about Han Solo')
 Book.create(title: 'ABC',  description: 'Letters book')
 Book.create(title: 'psychology', description: 'A book about body language')
+
+Author.create(name: 'Alibaba')
+Author.create(name: 'Stephen Hawking')
+Author.create(name: 'Jason Wong')

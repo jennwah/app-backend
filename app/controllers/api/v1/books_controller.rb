@@ -1,9 +1,7 @@
-module Api::V1
-    class BooksController < ApplicationController
-        def index
-            @books = Book.all
-            render json: @books
-        end
+class Api::V1::BooksController < Api::V1::ApiController
+    def index
+        @books = Book.all
+        render json: @books
     end
 end
 
