@@ -8,10 +8,9 @@ class Api::V1::BooksController < Api::V1::ApiController
         @book = Book.new(book_params)
 
         if @book.save
-            json_string = {'message' => 'Book is successfully Created!!'}.to_json
-            format.json { render :json => {item: @book, json_string} }
+            render json: @book
         else
-            format.json { render json: @book.errors, status: :unprocessable_entity }
+            render json: @book.errors
         end
     end
 
