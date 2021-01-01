@@ -5,7 +5,7 @@ class Api::V1::BooksController < Api::V1::ApiController
     end
 
     def create
-        @book = Book.new(book_params)
+        @book = Book.new(title: params[:title], description: params[:description])
 
         if @book.save
             render json: @book
@@ -13,10 +13,5 @@ class Api::V1::BooksController < Api::V1::ApiController
             render json: @book.errors
         end
     end
-
-    private
-        def book_params
-            params.require(:book).permit(:title, :description)
-        end
 end
 
