@@ -1,5 +1,5 @@
 class Api::V1::BooksController < Api::V1::ApiController
-    wrap_parameters format: [:json]
+    wrap_parameters format: [:json, :xml, :url_encoded_form, :multipart_form]
     def index
         @books = Book.all
         render json: @books
